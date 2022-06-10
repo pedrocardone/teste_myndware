@@ -4,7 +4,14 @@
 
         <ModalSignatarios v-for="signatario of signatarios" :emails="emails" :signatario="signatario" :signatarios="signatarios"></ModalSignatarios>
 
-        
+        <div class="row topo align-items-end" style="margin: 2rem 0 1rem 0">
+            <div class="col-lg-9 col-md-8 col-sm-12 col-12 ">
+                <h3>Quem precisa assinar</h3>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 col-12">
+                <a class="link_addemail" v-on:click="adicionarEmailLogado()">Adicionar meu email</a>
+            </div>
+        </div>
 
         <div class="row linha_emails">
             <span class="input-group-text campo_email col-auto" v-for="email of emails">{{email.endereco}} <b-icon icon="x-lg" class="icone_remover_email" v-b-popover.hover.bottom="'Remover esse ítem'" v-on:click="removerEmail(email)"></b-icon></span>
@@ -20,13 +27,7 @@
             </div>
         </div>
 
-        <div class="row justify-content-center" v-show="nenhum_signatario">
-            <div class="col-auto" style="text-align: center;">
-                <img src="src/assets/mailbox.png" width="300px" />
-                <h4>Listagem de signatários vazia</h4>
-                <p>Adicione os emails para que as pessoas<br/> apareçam aqui nessa lista.</p>         
-            </div>
-        </div>
+        <BlocoNenhumSign :nenhum_signatario="nenhum_signatario"></BlocoNenhumSign>
 
 
         <form method="post" onsubmit="event.preventDefault()">  
@@ -49,15 +50,17 @@
     import BlocoSignatario from './components/BlocoSignatario.vue';
     import SwitchPedirOrdem from './components/SwitchPedirOrdem.vue';
     import BlocoRodape from './components/BlocoRodape.vue';
+import BlocoNenhumSign from './components/BlocoNenhumSign.vue';
 
     export default {        
         components: {
-        ModalEmail,
-        ModalSignatarios,
-        BlocoSignatario,
-        SwitchPedirOrdem,
-        BlocoRodape
-    },
+    ModalEmail,
+    ModalSignatarios,
+    BlocoSignatario,
+    SwitchPedirOrdem,
+    BlocoRodape,
+    BlocoNenhumSign
+},
 
     data() {
         return {
