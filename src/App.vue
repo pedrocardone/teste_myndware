@@ -50,17 +50,17 @@
     import BlocoSignatario from './components/BlocoSignatario.vue';
     import SwitchPedirOrdem from './components/SwitchPedirOrdem.vue';
     import BlocoRodape from './components/BlocoRodape.vue';
-import BlocoNenhumSign from './components/BlocoNenhumSign.vue';
+    import BlocoNenhumSign from './components/BlocoNenhumSign.vue';
 
     export default {        
         components: {
-    ModalEmail,
-    ModalSignatarios,
-    BlocoSignatario,
-    SwitchPedirOrdem,
-    BlocoRodape,
-    BlocoNenhumSign
-},
+        ModalEmail,
+        ModalSignatarios,
+        BlocoSignatario,
+        SwitchPedirOrdem,
+        BlocoRodape,
+        BlocoNenhumSign
+    },
 
     data() {
         return {

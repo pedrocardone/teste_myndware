@@ -45,12 +45,12 @@
                 var extra = document.getElementById("campo_extra_" + signatario.email).value;
                 if (nome.length > 0) {
                     signatario.nome = nome;
-                    signatario.extra = extra;                    
+                    signatario.extra = extra;                            
                     
                     this.$root.$emit("bv::toggle::modal", "modal_signatario_" + signatario.email);
                     console.table(this.signatarios);
                 }
-            },
+            }
 
         
         }

@@ -56,7 +56,7 @@
         props:['signatario', 'signatarios'],
 
         methods:{
-             salvaAcao(signatario, valor) {
+            salvaAcao(signatario, valor) {
                 signatario.acao = valor;
                 console.table(this.signatarios);
             },
@@ -75,8 +75,10 @@
             },
             abreModalSignatario(signatario) {
                 this.$root.$emit("bv::toggle::modal", "modal_signatario_" + signatario.email);                
+            },
+            removerSignatario(signatario) {
+                this.signatarios.splice(this.signatarios.indexOf(signatario), 1);
             }
-
         
         }
 
